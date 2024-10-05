@@ -23,7 +23,7 @@ jextract --output src -t org.unix -I $C_INCLUDE_PATH $C_INCLUDE_PATH/time.h
 ```
 
 2. Run `TimeTranslator.java` with the following command:
-3. 
+
 ```shell
 # macOS and Linux compatible command
 java --enable-native-access=ALL-UNNAMED --enable-preview --source 23 src/TimeTranslator.java
@@ -95,3 +95,22 @@ To enable the tracing support, just pass the `-Djextract.trace.downcalls=true` f
 java -XstartOnFirstThread -Djextract.trace.downcalls=true --enable-native-access=ALL-UNNAMED src/Teapot.java
 ```
 
+## How to run the sample with Rust
+
+This example was created by Jorn Vernee and you can find out all about it by reading his blog post https://jornvernee.github.io/java/panama/rust/panama-ffi/2021/09/03/rust-panama-helloworld.html.
+
+1. Obtain Java bindings to Rust by running in a terminal window:
+
+```shell
+jextract --output src -t org.rust --include-function hello_world \
+  -l :./rust-panama-helloworld/target/debug/librust_panama_helloworld.dylib \
+  rust-panama-helloworld/lib.h 
+```
+
+2. Run `SimpleRust.java` by using the following command:
+
+```shell
+java --enable-native-access=ALL-UNNAMED --enable-preview --source 23 \
+  -Djava.library.path=./rust-panama-helloworld/target/debug \
+  src/SimpleRust.java
+```
