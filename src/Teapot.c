@@ -1,5 +1,16 @@
 #include <GL/glut.h>
 
+
+void init(void)
+{
+  glClearColor(0.0, 0.0, 0.0, 0.0);
+  //Model(Object coordinates), View (Camera coordinates), Projection (Screen coordinates)
+  glMatrixMode(GL_PROJECTION);
+  gluPerspective(40.0, 1.0, 1.0, 10.0);
+  glMatrixMode(GL_MODELVIEW);
+  gluLookAt(0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.);
+}
+
 void display(void)
 {
   //Clear color and depth buffers
@@ -18,15 +29,6 @@ void display(void)
   glutSwapBuffers();
 }
 
-void init(void)
-{
-  glClearColor(0.0, 0.0, 0.0, 0.0);
-  //Model(Object coordinates), View (Camera coordinates), Projection (Screen coordinates)
-  glMatrixMode(GL_PROJECTION);
-  gluPerspective(40.0, 1.0, 1.0, 10.0);
-  glMatrixMode(GL_MODELVIEW);
-  gluLookAt(0.0, 0.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.);
-}
 
 int main(int argc, char **argv)
 {
