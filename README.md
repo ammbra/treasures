@@ -10,12 +10,6 @@ You need the following components to run the samples provided here:
 
 ## How to use the sample with C code
 
-
-Where is the C library on macOS?
-
-export C_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-
-
 1. Obtain Java bindings to C by running in a terminal window:
 
 ```shell
