@@ -10,6 +10,12 @@ You need the following components to run the samples provided here:
 
 ## How to use the sample with C code
 
+
+Where is the C library on macOS?
+
+export C_INCLUDE_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+
+
 1. Obtain Java bindings to C by running in a terminal window:
 
 ```shell
@@ -113,7 +119,5 @@ jextract --output src -t org.rust --include-function hello_world \
 2. Run `SimpleRust.java` by using the following command:
 
 ```shell
-java --enable-native-access=ALL-UNNAMED --enable-preview --source 23 \
-  -Djava.library.path=./rust-panama-helloworld/target/debug \
-  src/SimpleRust.java
+java --enable-native-access=ALL-UNNAMED --enable-preview --source 23 src/SimpleRust.java
 ```
