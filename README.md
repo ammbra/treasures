@@ -59,7 +59,7 @@ In order to run successfully, the  following commands need also the presence of 
 ```shell
 # macOS and Linux compatible command
 jextract --output src \
-    -l :/System/Library/Frameworks/GLUT.framework/GLUT \
+    -l :/opt/homebrew/Cellar/freeglut/3.6.0/lib \
     -I /opt/homebrew/Cellar/freeglut \
     -I /opt/homebrew/Cellar/mesa \
     -I /opt/homebrew/Cellar/mesa-glu \
@@ -73,7 +73,7 @@ jextract --output src \
 ```shell
 # macOS and Linux compatible command
 jextract --output src \
-    -l :/System/Library/Frameworks/GLUT.framework/GLUT \
+    -l :/opt/homebrew/Cellar/freeglut/3.6.0/lib \
     -I /opt/homebrew/Cellar/freeglut \
     -I /opt/homebrew/Cellar/mesa \
     -I /opt/homebrew/Cellar/mesa-glu \
